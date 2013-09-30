@@ -1,5 +1,6 @@
 # Dmm::Api
 
+[![Gem Version](https://badge.fury.io/rb/dmm-api.png)](http://badge.fury.io/rb/dmm-api)
 Ruby DMM Web Service API ver 2.0
 
 ## Installation
