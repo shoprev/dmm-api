@@ -30,7 +30,6 @@ describe "Dmm::Api.get" do
   context 'found items' do
     let(:service) { 'digital' }
     let(:floor) { 'videoa' }
-    # let(:keyword) { "菜月アンナ" }
     let(:keyword) { "au" }
     it_should_behave_like 'found items'
   end
