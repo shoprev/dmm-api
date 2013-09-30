@@ -15,7 +15,7 @@ module Dmm
 # p result.root.name.to_s.to_sym
       # @body = Hash.from_xml(@response.body.force_encoding("utf-8"))
 # p @body
-      @body = @body["response"] if @body.key?("response")
+      @body = @body[:response] if @body.key?(:response)
     end
 
     def code
