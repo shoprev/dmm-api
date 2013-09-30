@@ -1,8 +1,8 @@
 require "net/http"
 require "uri"
-# require 'active_support/core_ext'
+require 'active_support/core_ext'
 require "nokogiri"
-require "dmm/api/hash"
+# require "dmm/api/hash"
 require "dmm/api/version"
 require "dmm/api/response"
 require "dmm/api/request"
