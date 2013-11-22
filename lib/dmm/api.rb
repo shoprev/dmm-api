@@ -1,8 +1,6 @@
 require "net/http"
 require "uri"
 require 'active_support/core_ext'
-# require "nokogiri"
-# require "dmm/api/hash"
 require "dmm/api/version"
 require "dmm/api/response"
 require "dmm/api/request"
@@ -28,6 +26,8 @@ module Dmm
         opts[:operation] = 'ItemList' unless opts.key?(:operation)
         opts[:version] = '2.00' unless opts.key?(:version)
         opts[:timestamp] = Time.now.strftime("%Y-%m-%d %H:%M:%S")  unless opts.key?(:timestamp)
+        ids = @@options[:affiliate_id].split(",")
+        opts[:affiliate_id] = ids[rand(ids.size)]
         Dmm::Request.get("http://affiliate-api.dmm.com/", @@options.merge(opts))
       end
 
