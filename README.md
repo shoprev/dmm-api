@@ -25,7 +25,7 @@ require 'dmm/api'
 # configure
 Dmm::Api.configure do |options|
   options[:api_id] = "your api id"
-  options[:affiliate_id] = "your affiliate id"
+  options[:affiliate_id] = "id-001,id-002,id-003" # your affiliate id multiple choice
   options[:site] = "DMM.com or DMM.co.jp"
   ...
 end
