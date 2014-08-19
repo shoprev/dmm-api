@@ -1,9 +1,10 @@
 require "net/http"
 require "uri"
-require 'active_support/core_ext'
+# require 'active_support/core_ext'
 require "dmm/api/version"
 require "dmm/api/response"
 require "dmm/api/request"
+require "xmlsimple"
 
 module Dmm
 

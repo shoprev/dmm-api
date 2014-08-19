@@ -10,11 +10,24 @@ Dmm::Api.configure do |options|
   options[:site] = "DMM.com"
 end
 
-res = Dmm::Api.get({:service => 'lod',:floor => 'nmb48',:keyword => "山本彩",:hits => "1"})
-pp res["result"]["result_count"]
-pp res["result"]["items"]["item"]["title"]
+# version 0.1.3
+# res = Dmm::Api.get({:service => 'lod',:floor => 'nmb48',:keyword => "山本彩",:hits => "1"})
+# pp res["result"]["result_count"]
+# pp res["result"]["items"]["item"]["title"]
 
-res = Dmm::Api.get({:service => 'lod',:floor => 'nmb48',:keyword => "山本彩"})
-res["result"]["items"]["item"].each do |v|
-  pp v["title"]
+# version 0.2.0 and later
+res = Dmm::Api.get({:service => 'lod',:floor => 'nmb48',:keyword => "nmb48",:hits => "1"})
+pp res["result"][0]["result_count"][0]
+pp res["result"][0]["items"][0]["item"][0]["title"][0]
+
+# version 0.1.3
+# res = Dmm::Api.get({:service => 'lod',:floor => 'nmb48',:keyword => "山本彩"})
+# res["result"]["items"]["item"].each do |v|
+#   pp v["title"]
+# end
+
+# version 0.2.0 and later
+res = Dmm::Api.get({:service => 'lod',:floor => 'nmb48',:keyword => "nmb48"})
+res["result"][0]["items"][0]["item"].each do |v|
+  pp v["title"][0]
 end

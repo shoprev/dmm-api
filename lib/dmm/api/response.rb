@@ -3,8 +3,9 @@ module Dmm
   class Response
     def initialize(response)
       @response =response
-      @body = Hash.from_xml(@response.body)
-      @body = @body["response"] if @body.key?("response")
+      # @body = Hash.from_xml(@response.body)
+      # @body = @body["response"] if @body.key?("response")
+      @body = XmlSimple.xml_in(@response.body)
     end
 
     def code

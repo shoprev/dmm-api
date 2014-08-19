@@ -34,8 +34,8 @@ end
 res = Dmm::Api.get({:service => 'lod',:floor => 'nmb48',:keyword => "山本彩"})
 res.code # 200
 res.message # "OK"
-res["result"]["items"]["item"].each do |v|
-  title = v["title"]
+res["result"][0]["items"][0]["item"].each do |v|
+  title = v["title"][0]
   ...
 end
 ```

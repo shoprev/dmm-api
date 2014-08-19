@@ -1,21 +1,21 @@
 # coding: utf-8
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-share_examples_for 'found items' do
+shared_examples_for 'found items' do
   context 'code' do
     it { expect(res.code).to eq 200 }
   end
   context 'size' do
-    it { expect(res["result"]["result_count"].to_i).to be > 0 }
+    it { expect(res["result"][0]["result_count"][0].to_i).to be > 0 }
   end
 end
 
-share_examples_for 'not found items' do
+shared_examples_for 'not found items' do
   context 'code' do
     it { expect(res.code).to eq 200 }
   end
   context 'size' do
-    it { expect(res["result"]["result_count"].to_i).to eq 0 }
+    it { expect(res["result"][0]["result_count"][0].to_i).to eq 0 }
   end
 end
 
@@ -42,3 +42,4 @@ describe "Dmm::Api.get" do
   end
 
 end
+
